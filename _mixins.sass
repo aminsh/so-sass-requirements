@@ -1,0 +1,144 @@
+/*
+ *	In The Name Of ALLAH
+ *	mixins.sass
+ */
+@import "vars"
+
+=box-sizing($val)
+  -webkit-box-sizing: $val
+  -moz-box-sizing:  $val
+  box-sizing:  $val
+
+=bg-color($color)
+  background-color: $color
+
+=bg($val)
+  background: $val
+
+=bg-size($val)
+  -webkit-background-size: $val
+  background-size: $val
+
+=dir($val)
+  direction: $val
+
+=border($mode: "", $val)
+  @if type-of($mode) == keyword
+    border-#{$mode}: $val
+  @else
+    border: $val
+
+=border($val)
+  border: $val
+
+=border-radius($val: 0.2rem)
+  -webkit-border-radius: $val
+  -moz-border-radius: $val
+  border-radius: $val
+
+=transition($val: inherit)
+  -webkit-transition: $val
+  -moz-transition: $val
+  //-ms-transition: $val
+  -o-transition: $val
+  transition: $val
+
+=transform($val: inherit)
+  -webkit-transform: $val
+  -moz-transform: $val
+  -ms-transform: $val
+  -o-transform: $val
+  transform: $val
+
+=box-shadow($val: 0px 0px 2px 1px rgba(0,0,0,0.2))
+  @if type-of($val) == string and $val == "flat"
+    -webkit-box-shadow: $bshadow-flat-0_050cm
+    -moz-box-shadow: $bshadow-flat-0_050cm
+    box-shadow: $bshadow-flat-0_050cm
+  @else
+    -webkit-box-shadow: $val
+    -moz-box-shadow: $val
+    box-shadow: $val
+
+=text-shadow($val)
+  @if type-of($val) == string and $val == "flat"
+    text-shadow: $tshadow-flat-0_050cm
+  @else
+    text-shadow: $val
+
+=margin-v($val)
+  margin-top: $val
+  margin-bottom: $val
+
+=margin-h($val)
+  margin-left: $val
+  margin-right: $val
+
+=padding-v($val)
+  padding-top: $val
+  padding-bottom: $val
+
+=padding-h($val)
+  padding-left: $val
+  padding-right: $val
+
+=anim($val)
+  -webkit-animation: $val
+  -o-animation: $val
+  animation: $val
+
+=anim-delay($val)
+  -webkit-animation-delay: $val
+  -moz-animation-delay: $val
+  -o-animation-delay: $val
+  animation-delay: $val
+
+=no-user-select()
+  -webkit-user-select: none  /* Chrome all / Safari all */
+  -moz-user-select: none     /* Firefox all */
+  -ms-user-select: none      /* IE 10+ */
+  user-select: none          /* Likely future */
+
+=perspective($val: 0)
+  -webkit-perspective: $val
+  -moz-perspective: $val
+  perspective: $val
+
+=backface-visib($val)
+  -webkit-backface-visibility: $val
+  -moz-backface-visibility: $val
+  backface-visibility: $val
+
+=bg-img($val)
+  -webkit-background-image: $val
+  -moz-background-image: $val
+  -o-background-image: $val
+  background-image: $val
+
+=no-focus-outline()
+  &:focus
+    outline: 0 !important
+
+  &::-moz-focus-inner
+    border: 0
+
+
+=text-stroke($fg-color: "", $stroke-color)
+  @if type-of($fg-color) == color and type-of($stroke-color) == color
+    color: $fg-color
+    text-shadow: -1px -1px 0 $stroke-color, 1px -1px 0 $stroke-color, -1px 1px 0 $stroke-color, 1px 1px 0 $stroke-color
+  @else
+    text-shadow: -1px -1px 0 $stroke-color, 1px -1px 0 $stroke-color, -1px 1px 0 $stroke-color, 1px 1px 0 $stroke-color
+
+=word-break()
+  white-space: pre-wrap
+  word-break: break-all
+  /* For Chrome and IE */
+  word-wrap: break-word
+
+=gradient($adjustment, $dir: top, $default-bg: auto)
+  background: $default-bg /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient($dir ,#{$adjustment}) /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($dir,#{$adjustment}) /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($dir,#{$adjustment}) /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to $dir,#{$adjustment}) /* Standard syntax */
