@@ -22,7 +22,7 @@
 =dir($val)
   direction: $val
 
-=border($mode: "", $val)
+=border($mode: "", $val: "")
   @if type-of($mode) == keyword
     border-#{$mode}: $val
   @else
@@ -123,7 +123,7 @@
     border: 0
 
 
-=text-stroke($fg-color: "", $stroke-color)
+=text-stroke($fg-color: "", $stroke-color: "")
   @if type-of($fg-color) == color and type-of($stroke-color) == color
     color: $fg-color
     text-shadow: -1px -1px 0 $stroke-color, 1px -1px 0 $stroke-color, -1px 1px 0 $stroke-color, 1px 1px 0 $stroke-color
