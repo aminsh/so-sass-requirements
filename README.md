@@ -12,3 +12,8 @@ Then, add this code in first line:
 ```
 Don't worry about vars file. It will be [imported](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#import)
 from _mixins.sass.
+
+## More Information
+For getting more information about this requirements, use this wiki.
+
+###### Thanks for your contribution !
