@@ -23,13 +23,10 @@
   direction: $val
 
 =border($mode: "", $val: "")
-  @if type-of($mode) == keyword
-    border-#{$mode}: $val
+  @if $val == ""
+    border: $mode
   @else
-    border: $val
-
-=border($val)
-  border: $val
+    border-#{$mode}: $val
 
 =border-radius($val: 0.2rem)
   -webkit-border-radius: $val
@@ -136,9 +133,45 @@
   /* For Chrome and IE */
   word-wrap: break-word
 
-=gradient($adjustment, $dir: top, $default-bg: auto)
+=gradient($adjustment, $dir: top, $default-bg: "", $gradient-mode: linear)
+  $toDir: ""
+  @if $gradient-mode == radial
+    @if $dir == top
+      $toDir: at top
+    @else if $dir == bottom
+      $toDir: at bottom
+    @else if $dir == right
+      $toDir: at right
+    @else if $dir == left
+      $toDir: at left
+    @else if $dir == (top left)
+      $toDir: at top left
+    @else if $dir == (top right)
+      $toDir: at top right
+    @else if $dir == (bottom left)
+      $toDir: at bottom left
+    @else if $dir == (bottom right)
+      $toDir: at bottom right
+  @else
+    @if $dir == top
+      $toDir: to bottom
+    @else if $dir == bottom
+      $toDir: to top
+    @else if $dir == right
+      $toDir: to left
+    @else if $dir == left
+      $toDir: to right
+    @else if $dir == (top left)
+      $toDir: to bottom right
+    @else if $dir == (top right)
+      $toDir: to bottom left
+    @else if $dir == (bottom left)
+      $toDir: to top right
+    @else if $dir == (bottom right)
+      $toDir: to top left
+
   background: $default-bg /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient($dir ,#{$adjustment}) /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient($dir,#{$adjustment}) /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient($dir,#{$adjustment}) /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to $dir,#{$adjustment}) /* Standard syntax */
+  background: -webkit-#{$gradient-mode}-gradient($dir ,#{$adjustment}) /* For Safari 5.1 to 6.0 */
+  background: -o-#{$gradient-mode}-gradient($dir,#{$adjustment}) /* For Opera 11.1 to 12.0 */
+  background: -moz-#{$gradient-mode}-gradient($dir,#{$adjustment}) /* For Firefox 3.6 to 15 */
+  background: #{$gradient-mode}-gradient($toDir,#{$adjustment}) /* Standard syntax */
