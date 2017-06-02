@@ -14,6 +14,6 @@ Don't worry about vars file. It will be [imported](http://sass-lang.com/document
 from _mixins.sass.
 
 ## More Information
-For getting more information about this requirements, use this wiki.
+For getting more information about this requirements, use this [wiki](https://github.com/smrsan76/sass-requirements/wiki).
 
 ###### Thanks for your contribution !
