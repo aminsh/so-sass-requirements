@@ -14,18 +14,18 @@
   box-sizing:  $val
 
 /*
- * bg-color
- * Makes the "background-color" property shorter
- */
-=bg-color($color)
-  background-color: $color
-
-/*
  * bg
  * Makes the "background" property shorter
  */
 =bg($val)
   background: $val
+
+/*
+ * bg-color
+ * Makes the "background-color" property shorter
+ */
+=bg-color($color)
+  background-color: $color
 
 /*
  * bg-size
@@ -35,6 +35,16 @@
 =bg-size($val)
   -webkit-background-size: $val
   background-size: $val
+
+/*
+ * bg-img
+ * Provides cross-browser "background-image" properties
+ */
+=bg-img($val)
+  -webkit-background-image: $val
+  -moz-background-image: $val
+  -o-background-image: $val
+  background-image: $val
 
 /*
  * dir
@@ -192,16 +202,6 @@
   backface-visibility: $val
 
 /*
- * bg-img
- * Provides cross-browser "background-image" properties
- */
-=bg-img($val)
-  -webkit-background-image: $val
-  -moz-background-image: $val
-  -o-background-image: $val
-  background-image: $val
-
-/*
  * no-focus-outline
  * Avoids from showing an outline after focusing on an input element
  */
@@ -216,12 +216,12 @@
  * text-stroke
  * Makes something similar to text stroke by using text-shadow property
  */
-=text-stroke($fg-color: "", $stroke-color: "")
+=text-stroke($fg-color, $stroke-color: "")
   @if type-of($fg-color) == color and type-of($stroke-color) == color
     color: $fg-color
     text-shadow: -1px -1px 0 $stroke-color, 1px -1px 0 $stroke-color, -1px 1px 0 $stroke-color, 1px 1px 0 $stroke-color
   @else
-    text-shadow: -1px -1px 0 $stroke-color, 1px -1px 0 $stroke-color, -1px 1px 0 $stroke-color, 1px 1px 0 $stroke-color
+    text-shadow: -1px -1px 0 $fg-color, 1px -1px 0 $fg-color, -1px 1px 0 $fg-color, 1px 1px 0 $fg-color
 
 /*
  * word-break
@@ -275,7 +275,8 @@
     @else if $dir == (bottom right)
       $toDir: to top left
 
-  background: $default-bg /* For browsers that do not support gradients */
+  @if $default-bg != "" or $default-bg != null
+    background: $default-bg /* For browsers that do not support gradients */
   background: -webkit-#{$gradient-mode}-gradient($dir ,#{$adjustment}) /* For Safari 5.1 to 6.0 */
   background: -o-#{$gradient-mode}-gradient($dir,#{$adjustment}) /* For Opera 11.1 to 12.0 */
   background: -moz-#{$gradient-mode}-gradient($dir,#{$adjustment}) /* For Firefox 3.6 to 15 */
