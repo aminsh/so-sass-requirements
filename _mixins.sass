@@ -2,7 +2,7 @@
  *	In The Name Of ALLAH
  *	mixins.sass
  */
-@import "vars.sass"
+@import "vars"
 
 /*
  * box-sizing
@@ -79,9 +79,88 @@
 =transition($val: inherit)
   -webkit-transition: $val
   -moz-transition: $val
-  //-ms-transition: $val
+  -ms-transition: $val
   -o-transition: $val
   transition: $val
+// Abbreviation
+=trans($val: inherit)
+  -webkit-transition: $val
+  -moz-transition: $val
+  -ms-transition: $val
+  -o-transition: $val
+  transition: $val
+
+/*
+ * transition-duration
+ * Provides cross-browser "transition-duration" properties
+ */
+=transition-duration($val: inherit)
+  -webkit-transition-duration: $val
+  -moz-transition-duration: $val
+  -ms-transition-duration: $val
+  -o-transition-duration: $val
+  transition-duration: $val
+// Abbreviation
+=trans-dur($val: inherit)
+  -webkit-transition-duration: $val
+  -moz-transition-duration: $val
+  -ms-transition-duration: $val
+  -o-transition-duration: $val
+  transition-duration: $val
+
+/*
+ * transition-property
+ * Provides cross-browser "transition-property" properties
+ */
+=transition-property($val: inherit)
+  -webkit-transition-property: $val
+  -moz-transition-property: $val
+  -ms-transition-property: $val
+  -o-transition-property: $val
+  transition-property: $val
+// Abbreviation
+=trans-prop($val: inherit)
+  -webkit-transition-property: $val
+  -moz-transition-property: $val
+  -ms-transition-property: $val
+  -o-transition-property: $val
+  transition-property: $val
+
+/*
+ * transition-delay
+ * Provides cross-browser "transition-delay" properties
+ */
+=transition-delay($val: inherit)
+  -webkit-transition-delay: $val
+  -moz-transition-delay: $val
+  -ms-transition-delay: $val
+  -o-transition-delay: $val
+  transition-delay: $val
+// Abbreviation
+=trans-dly($val: inherit)
+  -webkit-transition-delay: $val
+  -moz-transition-delay: $val
+  -ms-transition-delay: $val
+  -o-transition-delay: $val
+  transition-delay: $val
+
+/*
+ * transition-timing-function
+ * Provides cross-browser "transition-timing-function" properties
+ */
+=transition-timing-function($val: inherit)
+  -webkit-transition-timing-function: $val
+  -moz-transition-timing-function: $val
+  -ms-transition-timing-function: $val
+  -o-transition-timing-function: $val
+  transition-timing-function: $val
+// Abbreviation
+=trans-time-fn($val: inherit)
+  -webkit-transition-timing-function: $val
+  -moz-transition-timing-function: $val
+  -ms-transition-timing-function: $val
+  -o-transition-timing-function: $val
+  transition-timing-function: $val
 
 /*
  * transform
@@ -98,7 +177,7 @@
  * box-shadow
  * Provides cross-browser "box-shadow" properties
  */
-=box-shadow($val: 0px 0px 2px 1px rgba(0,0,0,0.2))
+=box-shadow($val: 0px 1px 2px 1px rgba(0,0,0,0.2))
   @if type-of($val) == string and $val == "flat"
     -webkit-box-shadow: $bshadow-flat-0_050cm
     -moz-box-shadow: $bshadow-flat-0_050cm
@@ -164,6 +243,16 @@
   animation: $val
 
 /*
+ * anim-name
+ * Provides cross-browser "animation-name" properties
+ */
+=anim-name($val: inherit)
+  -webkit-animation-name: $val
+  -moz-animation-name: $val
+  -o-animation-name: $val
+  animation-name: $val
+
+/*
  * anim-delay
  * Provides cross-browser "animation-delay" properties
  */
@@ -172,6 +261,48 @@
   -moz-animation-delay: $val
   -o-animation-delay: $val
   animation-delay: $val
+// Abbreviation
+=anim-dly($val)
+  -webkit-animation-delay: $val
+  -moz-animation-delay: $val
+  -o-animation-delay: $val
+  animation-delay: $val
+
+/*
+ * anim-dur
+ * Makes cross browser "animation-duration"
+ */
+=anim-dur($s)
+  -webkit-animation-duration: $s
+  -moz-animation-duration: $s
+  -o-animation-duration: $s
+  animation-duration: $s
+
+/*
+ * anim-timing-func
+ * Makes cross browser "animation-timing-function"
+ */
+=anim-timing-func($v)
+  -webkit-animation-timing-function: $v
+  -moz-animation-timing-function: $v
+  -o-animation-timing-function: $v
+  animation-timing-function: $v
+// Abbreviation
+=anim-time-fn($v)
+  -webkit-animation-timing-function: $v
+  -moz-animation-timing-function: $v
+  -o-animation-timing-function: $v
+  animation-timing-function: $v
+
+/*
+ * animation-fill-mode
+ * Makes cross browser "animation-fill-mode"
+ */
+=anim-fill-mode($val: inherit)
+  -webkit-animation-fill-mode: $val
+  -moz-animation-fill-mode: $val
+  -o-animation-fill-mode: $val
+  animation-fill-mode: $val
 
 /*
  * no-user-select
@@ -277,7 +408,81 @@
 
   @if $default-bg != "" or $default-bg != null
     background: $default-bg /* For browsers that do not support gradients */
-  background: -webkit-#{$gradient-mode}-gradient($dir ,#{$adjustment}) /* For Safari 5.1 to 6.0 */
-  background: -o-#{$gradient-mode}-gradient($dir,#{$adjustment}) /* For Opera 11.1 to 12.0 */
-  background: -moz-#{$gradient-mode}-gradient($dir,#{$adjustment}) /* For Firefox 3.6 to 15 */
-  background: #{$gradient-mode}-gradient($toDir,#{$adjustment}) /* Standard syntax */
+  background-image: -webkit-#{$gradient-mode}-gradient($dir ,#{$adjustment}) /* For Safari 5.1 to 6.0 */
+  background-image: -o-#{$gradient-mode}-gradient($dir,#{$adjustment}) /* For Opera 11.1 to 12.0 */
+  background-image: -moz-#{$gradient-mode}-gradient($dir,#{$adjustment}) /* For Firefox 3.6 to 15 */
+  background-image: #{$gradient-mode}-gradient($toDir,#{$adjustment}) /* Standard syntax */
+
+/*
+ * overflow-x & overflow-y
+ * Makes cross browser overflow property
+ */
+=overflow-x($val: hidden)
+  overflow-x: $val
+  -ms-overflow-x: $val
+=overflow-y($val: hidden)
+  overflow-y: $val
+  -ms-overflow-y: $val
+
+/*
+ * transform-origin
+ * Makes cross browser transform-origin property
+ */
+=transform-origin($val: center center)
+  -webkit-transform-origin: $val
+  -moz-transform-origin: $val
+  -ms-transform-origin: $val
+  -o-transform-origin: $val
+  transform-origin: $val
+
+/*
+ * placeholder
+ * Makes cross browser placeholder elements
+ */
+=placeholder()
+  &::placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+  &::-webkit-input-placeholder
+    @content
+
+/*
+ * keyframes
+ * Makes cross browser keyframes
+ */
+=keyframes($animName)
+  @keyframes #{$animName}
+    @content
+  @-o-keyframes #{$animName}
+    @content
+  @-ms-keyframes #{$animName}
+    @content
+  @-moz-keyframes #{$animName}
+    @content
+  @-khtml-keyframes #{$animName}
+    @content
+  @-webkit-keyframes #{$animName}
+    @content
+
+/*
+ * filter
+ * Makes cross browser filter
+ */
+=filter($value)
+  -webkit-filter: $value
+  filter: $value
+
+/*
+ * selection
+ * Makes cross browser selections
+ */
+=selection($selection: "")
+  #{$selection}::selection
+    @content
+  #{$selection}::-moz-selection
+    @content
