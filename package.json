@@ -1,0 +1,31 @@
+{
+  "name": "sass-requirements",
+  "version": "1.0.0",
+  "description": "A lightweight package for making your styles cross-browser and easy to use",
+  "main": "./_index.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smrsan76/sass-requirements.git"
+  },
+  "keywords": [
+    "sass",
+    "css",
+    "style",
+    "styles",
+    "stylesheet",
+    "stylesheets",
+    "cross-browser",
+    "easy",
+    "lightweight"
+  ],
+  "author": "SMRSAN",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smrsan76/sass-requirements/issues"
+  },
+  "homepage": "https://github.com/smrsan76/sass-requirements#readme",
+  "sass": "./_index.scss"
+}
