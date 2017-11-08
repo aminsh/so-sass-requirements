@@ -1,19 +1,14 @@
 # Sass-Requirements
-Do your best in sass using this lightweight sass mixins + vars.
+Do your best in sass using this lightweight package.
 
-## Getting Started
-For install/configure the sass compiler, you can use it's [documentation](http://sass-lang.com/install).
 
-### Using this predefined mixins/vars
-To use this facilities, it's enough to add them in your sass stylesheets folder.
-Then, add this code in first line:
-```sass
-@import "mixins"
+### Using this predefined requirements
+If your sass compiler knows how to use npm packages, it's enough to import this package like this:
+```scss
+@import "sass-requirements";
 ```
-Don't worry about vars file. It will be [imported](http://sass-lang.com/documentation/file.SASS_REFERENCE.html#import)
-from _mixins.sass.
+Otherwise add `npm_modules` in includePaths (In [node-sass](https://www.npmjs.com/package/node-sass))
+or load_paths (In [official sass](http://sasscss.org/1))
+argument of your sass config.
 
-## More Information
-For getting more information about this requirements, use this [wiki](https://github.com/smrsan76/sass-requirements/wiki).
-
-###### Thanks for your contribution !
+###### ♥ Thanks for using ♥
