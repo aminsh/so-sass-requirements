@@ -172,7 +172,6 @@ cross-browser.
         user-select: none;
     }
     ```
-    Thanks to [css-tricks.com](https://css-tricks.com/)
   * `no-focus-outline()`
     Prevents outlines to be visible when user focuses on a specific element, e.g.
     ```scss
@@ -189,7 +188,6 @@ cross-browser.
         border: 0; 
     }
     ```
-    Thanks to [css-tricks.com](https://css-tricks.com/)
   * `perspective($value: 0)`
   * `backface-visib($value)` (( abbreviation of backface-visibility ))
   * `text-stroke($fg-color, $stroke-color: "")`
@@ -318,4 +316,6 @@ $color-map: (
 );
 ```
 
-###### ♥ Thanks for using ♥
+###### ♥ Thank You for Using ♥
+***
+###### Thanks to [css-tricks.com](https://css-tricks.com/)
