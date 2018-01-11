@@ -277,7 +277,7 @@ $color-flamingo: #EF4836;
 $color-valencia: #D64541;
 $color-tall-poppy: #C0392B;
 $color-monza: #CF000F;
-$color-cinnabar: #E74C3C;
+$color-light-cinnabar: #E74C3C;
 $color-razzmatazz: #DB0A5B;
 $color-sunset-orange: #F64747;
 $color-wax-flower: #F1A9A0;
@@ -300,7 +300,7 @@ $color-sherpa-blue: #013243;
 $color-san-marino: #446CB3;
 $color-alice-blue: #E4F1FE;
 $color-royal-blue: #4183D7;
-$color-picton-blue: #59ABE3;
+$color-light-picton-blue: #59ABE3;
 $color-spray: #81CFE0;
 $color-shakespeare: #52B3D9;
 $color-humming-bird: #C5EFF7;
@@ -417,7 +417,7 @@ $color-map: (
         color-black: #303030,
         color-real-black: #000000,
 
-        // Thanks to www.flatuicolorpicker.com ( Since v1.0.5 )
+  // Thanks to www.flatuicolorpicker.com ( Since v1.0.5 )
         color-cinnabar: #f03434,
         color-soft-red: #EC644B,
         color-chestnut-rose: #D24D57,
@@ -428,7 +428,7 @@ $color-map: (
         color-valencia: #D64541,
         color-tall-poppy: #C0392B,
         color-monza: #CF000F,
-        color-cinnabar: #E74C3C,
+        color-light-cinnabar: #E74C3C,
         color-razzmatazz: #DB0A5B,
         color-sunset-orange: #F64747,
         color-wax-flower: #F1A9A0,
@@ -451,7 +451,7 @@ $color-map: (
         color-san-marino: #446CB3,
         color-alice-blue: #E4F1FE,
         color-royal-blue: #4183D7,
-        color-picton-blue: #59ABE3,
+        color-light-picton-blue: #59ABE3,
         color-spray: #81CFE0,
         color-shakespeare: #52B3D9,
         color-humming-bird: #C5EFF7,
