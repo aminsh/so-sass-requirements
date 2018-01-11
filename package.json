@@ -1,6 +1,6 @@
 {
   "name": "sass-requirements",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A lightweight package for making your styles cross-browser and easy to use",
   "main": "./index.scss",
   "scripts": {
