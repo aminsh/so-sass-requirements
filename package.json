@@ -1,15 +1,12 @@
 {
-  "name": "sass-requirements",
+  "name": "@dev-storm/so-sass-requirements",
   "version": "1.0.7",
   "description": "A lightweight package for making your styles cross-browser and easy to use",
   "main": "./index.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/smrsan76/sass-requirements.git"
-  },
+ 
   "keywords": [
     "sass",
     "css",

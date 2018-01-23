@@ -1,7 +1,7 @@
 # Sass-Requirements
 Do your best in sass using this lightweight package.
 
-<img src="https://nodei.co/npm/sass-requirements.png" />
+<img src="https://nodei.co/npm/@dev-storm/so-sass-requirements.png" />
 
 ## Using this predefined requirements
 If your sass compiler knows how to use npm packages, it's enough to import this package like this:
